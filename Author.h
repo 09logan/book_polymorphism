@@ -3,22 +3,22 @@
 #ifndef AUTHOR_H
 #define AUTHOR_H
 
-
 using namespace std;
 
 class Author{
 private:
-    string name;
-    string gender;
-    string email;
+    string authorName;
+    string authorGender;
+    string authorEmail;
 
 public:
-    Author(string authorName, string authorGender, string authorEmail);
+    Author(string name, string gender, string email);
     Author();
-    void setEmail(string authorEmail);
-    string getName();
-    string getGender();
-    string getEmail();
+    void setAuthorEmail(string email);
+    string getAuthorName();
+    string getAuthorGender();
+    string getAuthorEmail();
     string toString();
 };
 #endif // AUTHOR_H
+

@@ -1,25 +1,27 @@
-#include <iostream>
-#include "Book.h"
-#ifndef TEXTBOOK_H
-#define TEXTBOOK_H
-
-
+#include<iostream>
 using namespace std;
-
-class TextBook:public Book
+#include "Book.h"
+class Textbook:public Book
 {
 private:
     string subject;
-    string publisher;
-    string edition;
-public:
-    TextBook(string, Author, float, string , string, string);
-    void setSubject(string textSubject);
-    void setEdition(string textEdition);
-    string getSubject();
-    string getPublisher();
-    string getEdition();
+    string bookname;
+    Author authorname;
+    float price;
+    bool hardcover;
+    float version;
 
-    string toString();
-};
-#endif // TEXTBOOK_H
+public:
+    Textbook(Author Author_name,string,string,float,float,bool);
+    void setsubject(string);
+    string getsubject();
+    void setprice(float);
+    float getprice();
+    void setversion(float);
+    float getversion();
+    void hardcovered(bool);
+    bool ishardcovered();
+    string tostring();
+
+    };
+

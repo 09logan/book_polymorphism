@@ -1,42 +1,54 @@
-#include <iostream>
-#include "TextBook.h"
-
+#include<iostream>
 using namespace std;
+#include "Textbook.h"
 
-TextBook::TextBook(string bookName, Author authorName, float bookPrice, string textSubject,string textPublisher,string textEdition)
-    :Book( bookName, authorName, bookPrice)
+
+Textbook::Textbook(Author author_name,string fsubject,string fbookname,float fprice,float fversion,bool fhardcover):Book(fbookname,author_name,fprice)
 {
-    setSubject(textSubject);
-    setEdition(textEdition);
-    this->publisher = textPublisher;
+    this->authorname=author_name;
+    this->bookname=fbookname;
+    setsubject(fsubject);
+    setprice(fprice);
+    setversion(fversion);
+    hardcovered(fhardcover);
 }
 
-void TextBook::setSubject(string textSubject)
+void Textbook::setsubject(string fsubject)
 {
-    this->subject = textSubject;
+this->subject=fsubject;
 }
-
-void TextBook::setEdition(string textEdition)
-{
-    this->edition = textEdition;
-}
-
-string TextBook::getSubject()
+string Textbook::getsubject()
 {
     return subject;
 }
-
-string TextBook::getPublisher()
+void Textbook::setprice(float fprice)
 {
-    return publisher;
+    this->price=fprice;
+}
+float Textbook::getprice()
+{
+    return price;
+}
+void Textbook::setversion(float fversion)
+{
+    this->version=fversion;
+}
+float Textbook::getversion()
+{
+    return version;
+}
+void Textbook::hardcovered(bool fhardcover)
+{
+    this->hardcover=fhardcover;
+}
+bool Textbook::ishardcovered()
+{
+    return hardcover;
+}
+string Textbook::toString()
+{
+    cout<<getsubject()<<" of version "<<getversion()<<" Book named "<<testtextbook.toString()<<endl;
+    cout<<"The price is"<<getBookPrice();
+    return  Author::getBookName() + " by " + Author::toString();
 }
 
-string TextBook::getEdition()
-{
-    return edition;
-}
-
-string TextBook :: toString()
-{
-    return " Subject: " + subject + " Publisher: " + publisher + " Edition: " + edition;
-}

@@ -1,45 +1,51 @@
 
 #include <iostream>
 #include "Book.h"
+
 using namespace std;
 
-Book::Book(string bookName, Author authorName, float bookPrice)
+Book::Book(string book_name, Author author_name, float price)
 {
-    this->name = bookName;
-    this->author = authorName;
-    setPrice(bookPrice);
-}
-Book::Book(string bookName, Author authorName, float bookPrice, int bookQuantity)
-{
-    this->name = bookName;
-    this->author = authorName;
-    setPrice(bookPrice);
-    setQuantity(bookQuantity);
-}
-void Book::setPrice(float bookPrice)
-{
-    this->price = bookPrice;
-}
-void Book::setQuantity(int bookQuantity)
-{
-    this->quantity = bookQuantity;
+    this->bookName = book_name;
+    this->authorName = author_name;
+    setBookPrice(price);
 }
 
-string Book::getName()
+Book::Book(string book_name, Author author_name, float price, int quantity)
 {
-    return name;
+    this->bookName = book_name;
+    this->authorName = author_name;
+    setBookPrice(price);
+    setBookQuantity(quantity);
 }
-Author Book::getAuthor()
+
+void Book::setBookPrice(float price)
 {
-    return author;
+    this->bookPrice = price;
 }
-float Book::getPrice()
+
+void Book::setBookQuantity(int quantity)
 {
-    return price;
+    this->bookQuantity = quantity;
 }
-int Book::getQuantity()
+
+string Book::getBookName()
 {
-    return quantity;
+    return bookName;
 }
 
 
+float Book::getBookPrice()
+{
+    return bookPrice;
+}
+
+int Book::getBookQuantity()
+{
+    return bookQuantity;
+}
+
+/*string Book::toString()
+{
+    return  getBookName() + " by " + authorName.toString();
+}*/
