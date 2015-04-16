@@ -6,34 +6,34 @@ using namespace std;
 
 Author::Author(){
 }
-Author::Author(string authorName, string authorGender, string authorEmail)
+Author::Author(string name, string gender, string email)
 {
-    this->name =  authorName;
-    this->gender = authorGender;
-    setEmail(authorEmail);
+    this->authorName =  name;
+    this->authorGender = gender;
+    setAuthorEmail(email);
 }
 
-void Author::setEmail(string authorEmail)
+void Author::setAuthorEmail(string email)
 {
-    this->email = authorEmail;
+    this->authorEmail = email;
 }
 
-string Author::getName()
+string Author::getAuthorName()
 {
-    return name;
+    return authorName;
 }
 
-string Author::getGender()
+string Author::getAuthorGender()
 {
-    return gender;
+    return authorGender;
 }
 
-string Author::getEmail()
+string Author::getAuthorEmail()
 {
-    return email;
+    return authorEmail;
 }
 
 string Author::toString()
 {
-    return getName() + "  at  " + getEmail() + " who is "+getGender();
+    return getAuthorName() + " at " + getAuthorEmail();
 }

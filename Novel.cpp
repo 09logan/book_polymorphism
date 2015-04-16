@@ -1,41 +1,56 @@
-
-#include <iostream>
+#include<iostream>
 #include "Novel.h"
-#include <string>
-
 using namespace std;
-
-Novel::Novel(string bookName, Author authorName, float bookPrice, bool novelCover, string novelGenre, string novelPublisher)
-:Book( bookName, authorName, bookPrice)
+Novel::Novel(Author author_name,string novelname,string Ngenre,float Nprice,float fquantity,bool NIspriceless):Book(novelname,author_name,Nprice,fquantity)
 {
-    this->isHardCover = novelCover;
-    this->genre = novelGenre;
-    this->publisher = novelPublisher;
+    setgenre(Ngenre);
+    setprice(Nprice);
+    this->nameofnovel=novelname;
+    this->authorname=authorname;
+    setquantity(fquantity);
+    setIspriceless(NIspriceless);
+    }
+
+void Novel::setquantity(float fquantity)
+{
+   this->quantity=fquantity;
+}
+float Novel::getquantity()
+{
+    return quantity;
+}
+void Novel::setgenre(string Genre)
+{
+    this->genre=Genre;
 
 }
 
-bool Novel::getCover()
-{
-    return isHardCover;
-}
-
-string Novel::getGenre()
+string Novel::getgenre()
 {
     return genre;
 }
 
-string Novel::getPublisher()
+void Novel::setprice(float Price)
 {
-    return publisher;
+
+this->price=Price;
 }
 
-string Novel :: toString()
+float Novel::getprice()
 {
-    string cover;
-    if (getCover() == 1)
-        cover = "There is a cover";
-    else
-        cover = "There is no cover";
-
-    return cover + " Genre: " +getGenre() + " Publisher: " +getPublisher()+ " publications ";
+    return price;
 }
+
+void Novel::setIspriceless(bool priceless)
+{
+    this->Ispriceless=priceless;
+}
+bool Novel::getIspriceless()
+{
+    return Ispriceless;
+}
+string Novel::tostring()
+{
+ cout<<"A worth"<<getprice()<<" of genre "<<getgenre()<<" Book named ";
+}
+

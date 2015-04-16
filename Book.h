@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "Author.h"
 #ifndef BOOK_H
@@ -7,20 +8,24 @@ using namespace std;
 
 class Book{
 private:
-    string name;
-    Author author;
-    float price;
-    int quantity;
+    string bookName;
+    Author authorName;
+    float bookPrice;
+    int bookQuantity;
 
 public:
-    Book(string bookName, Author authorName, float bookPrice);
-    Book(string bookName, Author authorName, float bookPrice, int bookQuantity);
-    void setPrice(float bookPrice);
-    void setQuantity(int bookQuantity);
-    string getName();
-    Author getAuthor();
-    float getPrice();
-    int getQuantity();
-    virtual string toString()=0;
+    Book(string book_name, Author author_name, float price);
+    Book(string book_name, Author author_name, float price, int quantity);
+    void setBookPrice(float price);
+    void setBookQuantity(int quantity);
+    string getBookName();
+
+    float getBookPrice();
+    int getBookQuantity();
+   virtual string toString()
+   {
+       return 0;
+   };
+
 };
-#endif
+#endif // BOOK_H
